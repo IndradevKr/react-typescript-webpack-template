@@ -9,7 +9,7 @@
       "DOM",
       "ESNext"
     ],
-    "outDir": "./build/dist",
+    "outDir": "./build",
     "strict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
