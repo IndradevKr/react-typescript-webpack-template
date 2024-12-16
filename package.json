@@ -2,10 +2,11 @@
   "name": "react-typescript-webpack-template",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve --config webpack.config.js --open"
+    "start": "webpack serve --config webpack-config/webpack.config.js --env env=dev",
+    "build": "webpack --config webpack-config/webpack.config.js --env env=prod"
   },
   "author": "",
   "license": "ISC",

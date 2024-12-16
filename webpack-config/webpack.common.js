@@ -1,8 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { css } = require('webpack');
 
 module.exports = {
-  entry: path.resolve(__dirname, './src/index.tsx'),
+  entry: path.resolve(__dirname, '..', './src/index.tsx'),
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
   },
@@ -23,13 +24,18 @@ module.exports = {
     {
       test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2)$/i,
       type: "asset",
-    },
-    ]
+    }],
+    parser: {
+      css: {
+        url: true,
+      }
+    }
   },
   output: {
-    path: path.resolve(__dirname, './build'),
-    filename: 'bundle.js'
+    path: path.resolve(__dirname, '..', './build'),
+    filename: 'bundle.js',
+    clean: true
   },
-  mode: 'development',
   plugins: [new HtmlWebpackPlugin({template: './public/index.html'})],
+  stats: 'errors-only'
 }
