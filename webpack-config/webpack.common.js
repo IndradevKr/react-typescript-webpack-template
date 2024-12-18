@@ -1,9 +1,12 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { css } = require('webpack');
 
 module.exports = {
-  entry: path.resolve(__dirname, '..', './src/index.tsx'),
+  entry: [
+    'webpack/hot/dev-server.js',
+    'webpack-dev-server/client/index.js?hot=true&live-reload=true',
+    path.resolve(__dirname, '..', './src/index.tsx')
+  ],
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
   },
