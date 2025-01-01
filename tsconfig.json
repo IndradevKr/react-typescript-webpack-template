@@ -1,14 +1,11 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "module": "NodeNext",
+    "module": "CommonJS",
     "allowJs": true,
     "jsx": "react-jsx",
-    "moduleResolution": "nodenext",
-    "lib": [
-      "DOM",
-      "ESNext"
-    ],
+    "moduleResolution": "node",
+    "lib": ["DOM", "ESNext"],
     "outDir": "./build",
     "strict": true,
     "esModuleInterop": true,
@@ -16,5 +13,8 @@
     "isolatedModules": true,
     "resolveJsonModule": true
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],
+  "path": {
+    "@src/*": ["./src/*"]
+  }
 }
