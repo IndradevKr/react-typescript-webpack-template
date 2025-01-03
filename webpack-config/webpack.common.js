@@ -3,8 +3,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: [
-    "webpack/hot/dev-server.js",
-    "webpack-dev-server/client/index.js?hot=true&live-reload=true",
     path.resolve(__dirname, "..", "./src/index.tsx"),
   ],
   resolve: {
@@ -38,7 +36,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "..", "./build"),
-    filename: "bundle.js",
+    filename: "[name].[contenthash].bundle.js",
     clean: true,
   },
   plugins: [new HtmlWebpackPlugin({ template: "./public/index.html" })],
